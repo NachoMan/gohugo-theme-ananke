@@ -5,19 +5,25 @@ pre, .pre  {
 }
 
 
+code {
+  background-color: #f2fbff;
+  border-radius: 5px;
+  border: 1px solid #fafafa;
+  padding: 0 3px;
+  font-size: .95rem;
+  color: #404248;
+}
+
 pre  code {
   display: block;
-  padding: 1.5em 1.5em;
+  padding: 1.25em 1.25em;
   white-space: pre;
   font-size: .875rem;
-  line-height: 2;
-
+  line-height: 1.5em;
 }
 
 pre {
-  background-color: #222;
-  color: #ddd;
-  white-space: pre;
+  white-space: pre-wrap;
 
   hyphens: none;
   position: relative;
