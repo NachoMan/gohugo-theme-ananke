@@ -19,3 +19,37 @@
 cite {
     font-style: italic;
 }
+
+figcaption {
+    background-color: #f7f7f7;
+    border-left: 2px solid #e5e5e5;
+    margin-top: 10px;
+    padding: 10px;
+    line-height: 1.25rem;
+}
+
+figcaption p {
+    margin: 0.25em 0em;
+}
+
+.tag-list ul {
+    display: inline;
+    padding-lefT: 0.25em;
+}
+
+.tag-list li {
+    display: inline;
+}
+
+.tag-list li:after {
+    content: ", ";
+}
+
+.tag-list li:last-child:after {
+    content: "." !important;
+}
+
+.tag-list a {
+    color: inherit;
+}
+

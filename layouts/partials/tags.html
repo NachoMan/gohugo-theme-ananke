@@ -1,9 +1,14 @@
-<ul class="pa0">
-  {{ range .Params.tags }}
-   <li class="list">
-     <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">
-       {{- . -}}
-     </a>
-   </li>
-  {{ end }}
-</ul>
+{{ with .Params.tags }}
+<div class="tag-list f6 mb2">
+    <i class="fa fa-tags"></i>
+    <ul class="pa0">
+      {{ range . }}
+       <li class="list">
+	 <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" class="link no-underline">
+	   {{- . -}}
+	 </a>
+       </li>
+      {{ end }}
+    </ul>
+</div>
+{{ end }}

@@ -6,15 +6,16 @@ pre, .pre  {
 
 
 code {
-  background-color: #f2fbff;
+  background-color: var(--washed-blue);
   border-radius: 5px;
-  border: 1px solid #fafafa;
+  border: 1px solid var(--lightest-blue);
   padding: 0 3px;
   font-size: .95rem;
   color: #404248;
 }
 
 pre  code {
+  border-radius: 0px;
   display: block;
   padding: 1.25em 1.25em;
   white-space: pre;
