@@ -43,9 +43,18 @@
       {{ template "_internal/google_analytics_async.html" . }}
     {{ end }}
     <link rel="stylesheet" href="https://use.fontawesome.com/2f8b22121f.css">
+
+    {{- if .HasShortcode "gallery" -}}
+    <link rel="stylesheet" href="/photoswipe/photoswipe.css">
+    <link rel="stylesheet" href="/photoswipe/default-skin/default-skin.css">
+    <link rel="stylesheet" href="/photoswipe/gallery.css">
+    {{- end -}}
   </head>
 
   <body class="ma0 {{ $.Param "body_classes"  | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+    {{- if .HasShortcode "gallery" -}}
+    {{ partial "site-gallery.html" . }}
+    {{- end -}}
 
     {{ block "header" . }}{{ partial "site-header.html" .}}{{ end }}
     <main class="pb7" role="main">
@@ -53,5 +62,12 @@
     </main>
     {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
     {{ block "scripts" . }}{{ partialCached "site-scripts.html" . }}{{ end }}
+
+    {{- if .HasShortcode "gallery" -}}
+    <script src="/photoswipe/photoswipe.min.js"></script>
+    <script src="/photoswipe/photoswipe-ui-default.min.js"></script>
+    <script src="/photoswipe/initphotoswipe.js"></script>
+    <script>initPhotoSwipeFromDOM('.gallery');</script>
+    {{- end -}}
   </body>
 </html>
